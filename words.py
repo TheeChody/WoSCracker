@@ -5,7 +5,7 @@ new_word_list = []
 with open("ref/english", "r") as file:
     words = file.read()
     word_list = list(map(str, words.splitlines()))
-start_len = len(word_list)
+
 for word in word_list:
     if 4 <= len(word) <= 8:
         new_word_list.append(word)
@@ -13,4 +13,4 @@ for word in word_list:
 with open("ref/test_english", "w") as new_file:
     for new_word in new_word_list:
         new_file.write(f"{new_word}\n")
-print(f"{start_len:,} words to {len(new_word_list):,} words -- {timer() - start}")
+print(f"{len(word_list):,} words to {len(new_word_list):,} words -- {timer() - start}")
